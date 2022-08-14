@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-container {
+  background-image: url("../../public/backgroundug.jpeg");
+  /* height: 100vh; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  background: white;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background: #d7ecfc;
+  border-radius: 10px;
+}
