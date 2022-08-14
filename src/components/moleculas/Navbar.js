@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
@@ -7,7 +8,7 @@ const Navbar = () => {
         Producción científica Universidad de Guayaquil
       </p>
       <div className="absolute right-12">
-        <img src="./logoUg-white.png" width={50} height={50} />
+        <Image src="/logoUg-white.png" width={50} height={50} alt="logo" />
       </div>
     </div>
   );

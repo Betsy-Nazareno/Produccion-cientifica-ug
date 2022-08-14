@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const BadgeSideBar = ({ text, value, source, handleClick }) => {
   const [isHover, setIsHover] = useState(false);
@@ -9,7 +10,7 @@ const BadgeSideBar = ({ text, value, source, handleClick }) => {
     if (sesion.page === value) {
       setIsSelected(true);
     }
-  }, []);
+  }, [value]);
 
   return (
     <div
@@ -20,7 +21,7 @@ const BadgeSideBar = ({ text, value, source, handleClick }) => {
       onMouseLeave={() => setIsHover(false)}
       onClick={() => handleClick(value)}
     >
-      <img src={source} width={20} />
+      <Image src={source} width={20} height={20} alt="icon" />
       <p className="pl-4">{text}</p>
     </div>
   );
