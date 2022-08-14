@@ -7,7 +7,7 @@ const BadgeSideBar = ({ text, value, source, handleClick }) => {
 
   useEffect(() => {
     const sesion = JSON.parse(window.localStorage.getItem("sesion"));
-    if (sesion.page === value) {
+    if (sesion?.page === value) {
       setIsSelected(true);
     }
   }, [value]);
