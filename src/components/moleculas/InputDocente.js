@@ -31,8 +31,8 @@ export const InputDocente = ({ form, addDocente }) => {
         <div className="bg-gray-200 h-[1px] w-full ml-2" />
       </div>
 
-      {allDocentes?.map((docente) => (
-        <DetailDocente docente={docente} />
+      {allDocentes?.map((docente, index) => (
+        <DetailDocente docente={docente} key={index} />
       ))}
 
       <div className="border-[1px] border-gray-200 rounded-xl p-4">

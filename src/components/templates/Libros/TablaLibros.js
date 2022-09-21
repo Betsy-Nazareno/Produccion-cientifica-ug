@@ -34,8 +34,8 @@ const TablaLibros = ({ hasChange }) => {
         </tr>
       </thead>
       <tbody>
-        {libros.map((libro) => (
-          <tr>
+        {libros.map((libro, index) => (
+          <tr key={index}>
             <CellTable>{libro.facultad}</CellTable>
             <CellTable>{libro.codigo_ug} </CellTable>
             <CellTable>{libro.titulo} </CellTable>
@@ -50,8 +50,8 @@ const TablaLibros = ({ hasChange }) => {
             <CellTable>{libro.dominio_cientifico}</CellTable>
             <CellTable>{libro.linea_investigacion} </CellTable>
             <CellTable>
-              {libro.docentes.map((docente) => (
-                <DetailDocente docente={docente} showInTable />
+              {libro.docentes.map((docente, index) => (
+                <DetailDocente key={index} docente={docente} showInTable />
               ))}
             </CellTable>
           </tr>
