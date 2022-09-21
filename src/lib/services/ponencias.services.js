@@ -1,14 +1,14 @@
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { firebaseDB } from "../config/firebase_config";
 
-const COLLECTION = "articulos";
+const COLLECTION = "ponencias";
 
-export const saveArticle = async (articulos) => {
+export const savePonencia = async (ponencia) => {
   const col = collection(firebaseDB, COLLECTION);
-  await addDoc(col, articulos);
+  await addDoc(col, ponencia);
 };
 
-export const getAllArticles = async () => {
+export const getAllPonencias = async () => {
   const col = collection(firebaseDB, COLLECTION);
   const snapshot = await getDocs(col);
   return snapshot.docs.map((doc) => doc.data());
