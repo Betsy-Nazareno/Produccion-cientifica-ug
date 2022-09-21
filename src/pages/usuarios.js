@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import BasePaginas from "../components/templates/BasePaginas";
+import UsuariosTemplate from "../components/templates/Usuarios/UsuariosMain";
 
 const Usuarios = () => {
   return (
@@ -9,7 +10,7 @@ const Usuarios = () => {
         <title>Usuarios</title>
         <meta name="description" content="Usuarios" />
       </Head>
-      <div>Usuarios</div>
+      <UsuariosTemplate />
     </BasePaginas>
   );
 };

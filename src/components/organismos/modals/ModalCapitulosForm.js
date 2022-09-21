@@ -43,6 +43,7 @@ export const ModaCapitulosForm = ({ isOpen, onClose, title, onChange }) => {
   const handleSave = async () => {
     setIsLoading(true);
     await saveChapter(capituloForm);
+    setcapituloForm(initialValues);
     setIsLoading(false);
     onChange();
     onClose();

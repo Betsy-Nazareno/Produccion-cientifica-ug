@@ -1,4 +1,4 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { firebaseDB } from "../config/firebase_config";
 import { COLLECTIONS } from "../constants";
 
@@ -14,4 +14,15 @@ export const loginUser = async (email, password) => {
   }
   const [doc] = response.docs || [];
   return doc.data();
+};
+
+export const addUser = async (usuario) => {
+  const col = collection(firebaseDB, COLLECTIONS.USUARIOS);
+  await addDoc(col, usuario);
+};
+
+export const getAllusers = async () => {
+  const col = collection(firebaseDB, COLLECTIONS.USUARIOS);
+  const snapshot = await getDocs(col);
+  return snapshot.docs.map((doc) => doc.data());
 };

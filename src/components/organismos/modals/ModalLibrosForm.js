@@ -38,6 +38,7 @@ export const ModalLibrosForm = ({ isOpen, onClose, title, onChange }) => {
   const handleSave = async () => {
     setIsLoading(true);
     await saveBook(libroForm);
+    setLibroForm(initialValues);
     setIsLoading(false);
     onChange();
     onClose();
