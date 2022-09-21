@@ -4,13 +4,14 @@ import CellTable from "../../atomos/CellTable";
 import HeaderTable from "../../atomos/HeaderTable";
 import { DetailDocente } from "../../moleculas/DetailDocente";
 
-const TablaLibros = () => {
+const TablaLibros = ({ hasChange }) => {
   const [libros, setLibros] = useState([]);
+
   useEffect(() => {
     (async () => {
       setLibros(await getAllBooks());
     })();
-  }, []);
+  }, [hasChange]);
 
   return (
     <table>

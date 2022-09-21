@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { saveBook } from "../../../lib/services/libros.services";
 import PrimaryButton from "../../atomos/PrimaryButton";
+import Spinner from "../../atomos/Spinner";
 import { FormInput } from "../../moleculas/FormInput";
 import { InputDocente } from "../../moleculas/InputDocente";
 import Modal from "../../moleculas/Modal";
@@ -22,8 +23,9 @@ const initialValues = {
   docentes: [],
 };
 
-export const ModalLibrosForm = ({ isOpen, onClose, title }) => {
+export const ModalLibrosForm = ({ isOpen, onClose, title, onChange }) => {
   const [libroForm, setLibroForm] = useState(initialValues);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (key, value) => {
     setLibroForm({ ...libroForm, [key]: value });
@@ -34,7 +36,10 @@ export const ModalLibrosForm = ({ isOpen, onClose, title }) => {
   };
 
   const handleSave = async () => {
+    setIsLoading(true);
     await saveBook(libroForm);
+    setIsLoading(false);
+    onChange();
     onClose();
   };
 
@@ -127,11 +132,15 @@ export const ModalLibrosForm = ({ isOpen, onClose, title }) => {
       <InputDocente form={libroForm} addDocente={addDocente} />
 
       <div className="w-full flex justify-center">
-        <PrimaryButton
-          text="Enviar"
-          handleClick={handleSave}
-          className="w-10/12 mt-12"
-        />
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <PrimaryButton
+            text="Enviar"
+            handleClick={handleSave}
+            className="w-10/12 mt-12"
+          />
+        )}
       </div>
     </Modal>
   );
