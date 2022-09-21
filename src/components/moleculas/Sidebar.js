@@ -12,7 +12,7 @@ const SideBar = () => {
 
   const handleClick = (page) => {
     window.localStorage.setItem("sesion", JSON.stringify({ page }));
-    router.push(page);
+    router.push(`/${page}`);
   };
 
   return (
