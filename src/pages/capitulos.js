@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import BasePaginas from "../components/templates/BasePaginas";
+import CapitulosTemplate from "../components/templates/Capitulos/CapitulosTemplate";
 
 const Capitulos = () => {
   return (
@@ -9,7 +10,7 @@ const Capitulos = () => {
         <title>Capítulos</title>
         <meta name="description" content="Capítulos" />
       </Head>
-      <div>Capítulos</div>
+      <CapitulosTemplate />
     </BasePaginas>
   );
 };
