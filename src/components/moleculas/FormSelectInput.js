@@ -3,6 +3,7 @@ import React from "react";
 export const FormSelectInput = ({
   values,
   handleChange,
+  value,
   label,
   name,
   className = "",
@@ -15,6 +16,7 @@ export const FormSelectInput = ({
         id={name}
         className="w-full py-2"
         onChange={(e) => handleChange(e.target.value)}
+        value={value}
       >
         {values.map((option, index) => (
           <option value={option.value} key={index}>
