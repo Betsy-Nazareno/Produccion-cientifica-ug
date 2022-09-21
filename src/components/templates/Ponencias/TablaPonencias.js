@@ -22,7 +22,7 @@ const TablaPonencias = ({ hasChange }) => {
         <TarjetaResult
           key={index}
           link={`ponencias/${ponencia.id}`}
-          titulo={ponencia.titulo}
+          titulo={ponencia.nombre_ponencia}
           codigo={ponencia.codigo_ug}
           facultad={ponencia.facultad}
         />

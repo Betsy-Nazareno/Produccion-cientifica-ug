@@ -22,7 +22,7 @@ const TablaCapitulos = ({ hasChange }) => {
         <TarjetaResult
           key={index}
           link={`capitulos/${capitulo.id}`}
-          titulo={capitulo.titulo}
+          titulo={capitulo.titulo_capitulo}
           codigo={capitulo.codigo_ug}
           facultad={capitulo.facultad}
         />
